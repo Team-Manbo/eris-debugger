@@ -1,4 +1,4 @@
-const Eris = require('Eris')
+const Eris = require('eris')
 
 const { system, DateFormatting } = require('../utils')
 const version = require('../../package.json').version
