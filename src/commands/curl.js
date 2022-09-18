@@ -1,5 +1,5 @@
 const fetch = require('node-fetch')
-const Eris = require('Eris')
+const Eris = require('eris')
 const { ProcessManager, HLJS } = require('../utils')
 
 module.exports = async function curl (message, parent) {
