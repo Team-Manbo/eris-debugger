@@ -1,6 +1,6 @@
 {
   "name": "eris-debugger",
-  "version": "0.0.1-alpha.1",
+  "version": "0.0.1-alpha.2",
   "description": "Eris-Debugger. Debugging tool for eris based bots.",
   "main": "./src/index.js",
   "types": "./typings/index.d.ts",
