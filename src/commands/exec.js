@@ -1,5 +1,5 @@
 const child = require('child_process')
-const Eris = require('Eris')
+const Eris = require('eris')
 const { ProcessManager, codeBlock } = require('../utils')
 
 module.exports = async function Exec (message, parent) {
