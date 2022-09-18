@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/Team-Manbo/eris-debugger#readme",
   "dependencies": {
-    "eris-collect": "^1.1.0",
+    "eris-collect": "^1.1.1",
     "node-fetch": "^2.6.1"
   },
   "devDependencies": {
@@ -30,7 +30,7 @@
     "@typescript-eslint/parser": "^4.9.0",
     "babel-eslint": "^10.1.0",
     "eris": "^0.17.1",
-    "eris-collect": "^1.1.0",
+    "eris-collect": "^1.1.1",
     "eslint": "^8.23.1",
     "eslint-config-standard": "^16.0.2",
     "eslint-plugin-import": "^2.22.1",
@@ -42,6 +42,6 @@
   },
   "peerDependencies": {
     "eris": "^0.17.1",
-    "eris-collect": "^1.1.0"
+    "eris-collect": "^1.1.1"
   }
 }
