@@ -10,7 +10,7 @@ module.exports = async function (message, parent) {
   const cache = `${parent.client.guilds.size} guild(s) and ${parent.client.users.size} user(s)`
 
   if (parent.client.shards.size > 0) {
-    summary += `Running on PID ${process.pid} for this client, and running on PID ${process.ppid} for the parent process.\n\nThis bot is sharded in ${parent.client.shard.shards.size} shard(s).\nCan see ${cache} in this shard.`
+    summary += `Running on PID ${process.pid} for this client, and running on PID ${process.ppid} for the parent process.\n\nThis bot is sharded in ${parent.client.shards.size} shard(s).\nCan see ${cache} in this shard.`
   } else summary += `Running on PID ${process.pid}\n\nThis bot is not sharded and can see ${cache}.`
 
   summary += `\nAverage websocket latency: ${parent.client.ws.ping}ms`
