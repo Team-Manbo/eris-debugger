@@ -13,7 +13,7 @@ module.exports = async function (message, parent) {
     summary += `Running on PID ${process.pid} for this client, and running on PID ${process.ppid} for the parent process.\n\nThis bot is sharded in ${parent.client.shards.size} shard(s).\nCan see ${cache} in this shard.`
   } else summary += `Running on PID ${process.pid}\n\nThis bot is not sharded and can see ${cache}.`
 
-  summary += `\nAverage websocket latency: ${parent.client.ws.ping}ms`
+  summary += `\nAverage websocket latency: ${message.channel.guild.shard.latency}ms`
 
   return message.channel.createMessage(summary)
 }
