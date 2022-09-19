@@ -104,7 +104,12 @@ module.exports = class ProcessManager {
         const buttons = this.actions.filter(el => !(el.requirePage && this.splitted.length <= 1))
             .map(el => el.button)
         if (buttons.length <= 0) return
-        this.message.edit({components: buttons})
+        this.message.edit({
+            components: [
+                type: Constants.ComponentTypes.ACTION_ROW,
+                components: buttons
+            ]
+        })
     }
 
     filterSecret(string) {
