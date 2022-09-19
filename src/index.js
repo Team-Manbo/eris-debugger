@@ -127,9 +127,6 @@ module.exports = class ErisDebugger {
       case 'javascript':
         Commands.js(message, this)
         break
-      case 'shard':
-        Commands.shard(message, this)
-        break
       case 'jsi':
         Commands.jsi(message, this)
         break
