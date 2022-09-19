@@ -13,7 +13,7 @@ module.exports = async function (message, parent) {
   summary += `Running on PID ${process.pid} for this client, and running on PID ${process.ppid} for the parent process.\n\nThis bot is sharded in ${parent.client.shards.size} shard${parent.client.shards.size > 1 ? 's' : ''}.\n${cache} are cached in this shard(\`#${message.channel.guild.shard.id}\` of total ${parent.client.shards.size}).`
 
 
-  summary += `\n\nMax listerners count: \`${parent.client.getMaxListeners()}\`\nAverage websocket latency: \`${message.channel.guild.shard.latency}\`ms\nAverage REST request latency: \`${parent.client.latencyRef.latency}\`ms`
+  summary += `\n\nMax listerners count: \`${parent.client.getMaxListeners()}\`\nAverage websocket latency: \`${message.channel.guild.shard.latency}\`ms\nAverage REST request latency: \`${parent.client.requestHandler.latencyRef.latency}\`ms`
 
   return message.channel.createMessage(summary)
 }
