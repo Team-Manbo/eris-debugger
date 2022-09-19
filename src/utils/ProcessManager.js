@@ -107,7 +107,7 @@ module.exports = class ProcessManager {
         this.message.edit({
             components: [
                 {
-                    type: Constants.ComponentTypes.ACTION_ROW,
+                    type: Eris.Constants.ComponentTypes.ACTION_ROW,
                     components: buttons
                 }
             ]
