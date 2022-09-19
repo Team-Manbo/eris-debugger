@@ -106,8 +106,10 @@ module.exports = class ProcessManager {
         if (buttons.length <= 0) return
         this.message.edit({
             components: [
-                type: Constants.ComponentTypes.ACTION_ROW,
-                components: buttons
+                {
+                    type: Constants.ComponentTypes.ACTION_ROW,
+                    components: buttons
+                }
             ]
         })
     }
