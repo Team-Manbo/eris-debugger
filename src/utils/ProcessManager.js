@@ -88,7 +88,6 @@ module.exports = class ProcessManager {
             })
 
         this.messageComponentCollector.on('collect', component => {
-            console.log(this.actions)
             const event = this.actions.find(e => e.button.custom_id === component.data.custom_id)
             if (!event) return
             component.deferUpdate()
