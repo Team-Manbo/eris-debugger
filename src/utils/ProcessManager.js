@@ -82,7 +82,7 @@ module.exports = class ProcessManager {
             new InteractionCollector(this.erisDebugger.client, {
                 componentType: Eris.Constants.ComponentTypes.BUTTON,
                 interactionType: Eris.Constants.InteractionTypes.MESSAGE_COMPONENT,
-                filter: (interaction) => this.message.id === interaction.message.id && this.actions.find(e => e.button.custom_id === interaction.data.custom_id) && interaction.guildID ? interaction.member.id : interaction.user.id === this.author.id,
+                filter: (interaction) => (this.message.id === interaction?.message.id ?? this.message.id) && this.actions.find(e => e.button.custom_id === interaction.data.custom_id) && (interaction.member.id === this.author.id),
                 time: 300_000,
                 dispose: true
             })
