@@ -82,14 +82,14 @@ module.exports = class ProcessManager {
             new InteractionCollector(this.erisDebugger.client, {
                 componentType: Eris.Constants.ComponentTypes.BUTTON,
                 interactionType: Eris.Constants.InteractionTypes.MESSAGE_COMPONENT,
-                filter: (interaction) => this.message.id === interaction.message.id && this.actions.find(e => e.button.data.custom_id === interaction.data.custom_id) && interaction.guildID ? interaction.member.id : interaction.user.id === this.author.id,
+                filter: (interaction) => this.message.id === interaction.message.id && this.actions.find(e => e.button.custom_id === interaction.data.custom_id) && interaction.guildID ? interaction.member.id : interaction.user.id === this.author.id,
                 time: 300_000,
                 dispose: true
             })
 
         this.messageComponentCollector.on('collect', component => {
             console.log(this.actions)
-            const event = this.actions.find(e => e.button.data.custom_id === component.data.custom_id)
+            const event = this.actions.find(e => e.button.custom_id === component.data.custom_id)
             if (!event) return
             component.deferUpdate()
             event.action(this.args)
