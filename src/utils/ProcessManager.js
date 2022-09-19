@@ -108,7 +108,7 @@ module.exports = class ProcessManager {
     }
 
     filterSecret(string) {
-        string = string.replace(new RegExp(this.erisDebugger.client.token, 'gi'), '[access_token was hidden]')
+        string = string.replace(new RegExp(this.erisDebugger.client._token.substring(4), 'gi'), '[access_token was hidden]')
 
         for (const el of this.erisDebugger.options.secrets) {
             string = string.replace(new RegExp(regexpEscape(el), 'gi'), '[secret]')
