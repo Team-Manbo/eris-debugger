@@ -88,6 +88,7 @@ module.exports = class ProcessManager {
             })
 
         this.messageComponentCollector.on('collect', component => {
+            console.log(this.actions)
             const event = this.actions.find(e => e.button.data.custom_id === component.data.custom_id)
             if (!event) return
             component.deferUpdate()
@@ -184,8 +185,6 @@ module.exports = class ProcessManager {
 
     genText() {       
         const a =  this.options.noCode && this.splitted.length < 2 ? `${this.splitted[this.page - 1]}` : `${codeBlock.construct(this.splitted[this.page - 1], this.options.lang)}\n\nPage ${this.page}/${this.splitted.length}`
-        console.log(a)
-        return a
     }
 
     splitContent() {
