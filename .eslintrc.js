@@ -6,8 +6,8 @@ module.exports = {
     node: true,
     mocha: true
   },
-  extends: ['eslint:recommended', 'plugin:mocha/recommended'],
-  plugins: ['jsdoc', 'markdown', 'mocha'],
+  extends: ['eslint:recommended',],
+  plugins: ['jsdoc', 'markdown'],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly'
