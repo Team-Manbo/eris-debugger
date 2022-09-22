@@ -1,7 +1,5 @@
 const Eris = require('eris')
 const { ProcessManager, inspect, isGenerator } = require('../utils')
-const {Embed} = require('../../typings/embed')
-const {ErisAttachment} = require('../../typings/attachment')
 
 module.exports = async function js (message, parent) {
   // eslint-disable-next-line no-unused-vars
@@ -16,16 +14,7 @@ module.exports = async function js (message, parent) {
       typeOf = typeof output
 
       async function prettify (target) {
-          if (target instanceof Embed) {
-              await message.channel.createMessage({
-                  embeds: [target]
-              })
-          }
-          else if (target instanceof ErisAttachment ) {
-              await message.channel.createMessage({
-                  file: [target]
-              })
-          }
+          return target
       }
 
       if (isGenerator(output)) {
