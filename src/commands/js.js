@@ -14,7 +14,13 @@ module.exports = async function js (message, parent) {
       typeOf = typeof output
 
       async function prettify (target) {
-          return target
+          await message.channel.createMessage({
+              embeds: [target]
+          }).catch(async () => {
+              await message.channel.createMessage({
+                  file: [target]
+              }).catch(()=>{})
+          })
       }
 
       if (isGenerator(output)) {
